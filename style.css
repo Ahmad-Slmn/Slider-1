@@ -1,0 +1,130 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    font-family: arial
+}
+
+
+
+.slider-container {
+    margin: 10px auto;
+    width: 70%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .slider-container {
+        height: 500px
+    }
+}
+
+@media (max-width: 767px) {
+
+    .slider-container,
+    .slider-controls {
+        width: 97% !important
+    }
+}
+
+.slider-container img {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    /* تفعيل التنقل الناعم بين الصور */
+}
+
+.slider-container img img.active {
+    opacity: 1;
+}
+
+
+media (max-width: 767px) .slider-container,
+.slider-controls {
+    width: 97%;
+}
+
+.slider-controls {
+    width: 70%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-thumbnails {
+    width: 60%;
+    float: left;
+    text-align: center
+}
+
+.slider-thumbnail {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out
+}
+
+.slider-thumbnail.active {
+    background-color: #ccc;
+}
+
+.slider-prev,
+.slider-next {
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px;
+    user-select: none;
+    width: 20%;
+    transition: background-color 0.2s ease-in-out;
+    background-color: #eee
+}
+
+.slider-prev:disabled,
+.slider-next:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.slider-prev:hover,
+.slider-next:hover,
+.slider-thumbnail:hover {
+    background-color: #ddd;
+}
+
+.slider-controls .slider-next {
+    float: right
+}
+
+.slider-controls .slider-prev {
+    float: left
+}
+
+.slider-status {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgba(0, 0, 0, .6);
+    color: #FFF;
+    padding: 5px 10px;
+    font-size: 20px;
+    z-index: 2;
+    border-radius: 6px;
+}
